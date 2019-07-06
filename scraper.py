@@ -1,4 +1,6 @@
 # importing req files
+from time import sleep
+
 import requests
 from bs4 import BeautifulSoup
 import smtplib
@@ -13,6 +15,7 @@ headers = {
                   "Chrome/75.0.3770.100 Safari/537.36"}
 # the price you want the product to be at
 desired_price = 0
+
 
 def send_email():
     # smtp server for your email address
@@ -57,4 +60,7 @@ def check_price():
         send_email()
 
 
-check_price()
+while True:
+    check_price()
+    # checks every day
+    sleep(86400)
