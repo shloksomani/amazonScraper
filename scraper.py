@@ -24,15 +24,17 @@ def send_email():
     server.ehlo()
     server.starttls()
     server.ehlo()
+    # credentials
     your_email = 'abc@gmail.com'
     your_password = '000000'
     receiver_email = 'xyc@gmail.vom'
 
     server.login(your_email, your_password)
+
     subject = "Discount on the desired product"
 
     msg = f"Subject : {subject}\n\n{'check amazon link ' + URL}"
-    # server.sendmail(your_email, receiver_email, msg)
+    server.sendmail(your_email, receiver_email, msg)
     print('email has been sent')
     server.quit()
 
